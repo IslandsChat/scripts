@@ -4,119 +4,150 @@ local function _H(h)
     end))
 end
 
-local _1 = game:GetService(_H("4d61726b6574706c61636553657276696365"))
-local _2 = game:GetService(_H("506c6179657273"))
-local _3 = game:GetService(_H("436f7265477569"))
-local _4 = _2.LocalPlayer
+local _1 = game:GetService(_H("506c6179657273"))
+local _2 = game:GetService(_H("436f7265477569"))
+local _3 = _1.LocalPlayer
 
-local _name = _H("526f62757853686f70427970617373")
-if _3:FindFirstChild(_name) then
-    _3[_name]:Destroy()
+local _guiName = _H("42414246545f53686f704f70656e6572")
+if _2:FindFirstChild(_guiName) then
+    _2[_guiName]:Destroy()
 end
 
-local _5 = Instance.new(_H("53637265656e477569"), _3)
-_5.Name = _name
+local _4 = Instance.new(_H("53637265656e477569"), _2)
+_4.Name = _guiName
+
+local _5 = Instance.new(_H("4672616d65"), _4)
+_5.Size = UDim2.new(0, 250, 0, 230)
+_5.Position = UDim2.new(0.5, -125, 0.35, 0)
+_5.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+_5.Active = true
+_5.Draggable = true
 
 local _6 = Instance.new(_H("4672616d65"), _5)
-_6.Size = UDim2.new(0, 240, 0, 220)
-_6.Position = UDim2.new(0.5, -120, 0.35, 0)
-_6.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-_6.Active = true
-_6.Draggable = true
+_6.Size = UDim2.new(1, 0, 0, 30)
+_6.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 
-local _7 = Instance.new(_H("4672616d65"), _6)
-_7.Size = UDim2.new(1, 0, 0, 30)
-_7.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+local _7 = Instance.new(_H("546578744c6162656c"), _6)
+_7.Size = UDim2.new(1, -35, 1, 0)
+_7.Position = UDim2.new(0, 8, 0, 0)
+_7.Text = _H("742e6d652f49736c616e647343686174")
+_7.TextColor3 = Color3.new(1, 1, 1)
+_7.BackgroundTransparency = 1
+_7.Font = Enum.Font.SourceSansBold
+_7.TextXAlignment = Enum.TextXAlignment.Left
 
-local _8 = Instance.new(_H("546578744c6162656c"), _7)
-_8.Size = UDim2.new(1, -35, 1, 0)
-_8.Position = UDim2.new(0, 8, 0, 0)
-_8.Text = _H("742e6d652f49736c616e647343686174")
+local _8 = Instance.new(_H("54657874427574746f6e"), _6)
+_8.Size = UDim2.new(0, 24, 0, 24)
+_8.Position = UDim2.new(1, -27, 0, 3)
+_8.Text = "📋"
+_8.TextSize = 14
+_8.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
 _8.TextColor3 = Color3.new(1, 1, 1)
-_8.BackgroundTransparency = 1
-_8.Font = Enum.Font.SourceSansBold
-_8.TextXAlignment = Enum.TextXAlignment.Left
 
-local _9 = Instance.new(_H("546578744c6162656c"), _6)
+local _9 = Instance.new(_H("546578744c6162656c"), _5)
 _9.Size = UDim2.new(1, -10, 0, 35)
-_9.Position = UDim2.new(0, 5, 0, 175)
-_9.Text = _H("d0a1d182d0b0d182d183d1813a20d09ed0b6d0b8d0b4d0b0d0bdd0b8d0b52e2e2e")
+_9.Position = UDim2.new(0, 5, 0, 185)
+_9.Text = _H("d09ed182d0bad180d0bed0b9d182d0b520d0bcd0b0d0b3d0b0d0b7d0b8d0bd20d0b220d0b8d0b3d180d0b520d0b820d0bdd0b0d0b6d0bcd0b8d182d0b520d0bad0bdd0bed0bfd0bad183")
 _9.TextColor3 = Color3.fromRGB(255, 200, 0)
 _9.BackgroundTransparency = 1
 _9.TextWrapped = true
 _9.TextSize = 11
 
-local _A = Instance.new(_H("54657874427574746f6e"), _7)
-_A.Size = UDim2.new(0, 24, 0, 24)
-_A.Position = UDim2.new(1, -27, 0, 3)
-_A.Text = "📋"
-_A.TextSize = 14
-_A.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
-_A.TextColor3 = Color3.new(1, 1, 1)
-_A.Font = Enum.Font.SourceSansBold
-
-_A.MouseButton1Click:Connect(function()
-    local _B = setclipboard or toclipboard or (Synapse and Synapse.set_clipboard)
-    if _B then
-        _B(_H("68747470733a2f2f742e6d652f49736c616e647343686174"))
+_8.MouseButton1Click:Connect(function()
+    local _clip = setclipboard or toclipboard or (Synapse and Synapse.set_clipboard)
+    if _clip then
+        _clip(_H("68747470733a2f2f742e6d652f49736c616e647343686174"))
         _9.Text = _H("d0a1d181d18bd0bbd0bad0b020d181d0bad0bed0bfd0b8d180d0bed0b2d0b0d0bdd0b021")
-    else
-        _9.Text = _H("d09ed188d0b8d0b1d0bad0b03a20736574636c6970626f617264")
     end
 end)
 
-local _C = {
-    {Name = "Cookie Wheel", ID = 1126385328, ItemName = "CookieWheel"},
-    {Name = "Dragon Harpoon", ID = 1109792341, ItemName = "DragonHarpoon"},
-    {Name = "Cannon Egg", ID = 1161573715, ItemName = "CannonEgg"}
+local _Items = {
+    ["Cookie Wheel"] = {"cookie", "1126385328"},
+    ["Dragon Harpoon"] = {"dragonharpoon", "dragon", "1109792341"},
+    ["Cannon Egg"] = {"cannonegg", "egg", "1161573715"}
 }
 
-local function _D(_E)
-    local _F = _4:FindFirstChild(_H("506c61796572477569"))
-    if _F and firesignal then
-        for _, v in pairs(_F:GetDescendants()) do
-            if (v:IsA(_H("477569427574746f6e")) or v:IsA(_H("54657874427574746f6e")) or v:IsA(_H("496d616765427574746f6e"))) then
-                if string.find(string.lower(v.Name), string.lower(_E.ItemName)) or string.find(string.lower(v.Name), string.lower(_E.Name)) then
-                    firesignal(v.MouseButton1Click)
-                    firesignal(v.Activated)
-                    return true, _H("d092d18bd0b7d0b2d0b0d0bdd0be20d187d0b5d180d0b5d0b720554920d0b8d0b3d180d18b")
+local function _openInShop(_kws)
+    local _pGui = _3:FindFirstChild(_H("506c61796572477569"))
+    if not _pGui then return false end
+
+    for _, gui in pairs(_pGui:GetChildren()) do
+        if gui:IsA(_H("53637265656e477569")) then
+            for _, desc in pairs(gui:GetDescendants()) do
+                if desc:IsA(_H("4775694f626a656374")) and (string.find(string.lower(desc.Name), _H("73686f70")) or string.find(string.lower(desc.Name), _H("73746f7265"))) then
+                    desc.Visible = true
                 end
             end
         end
     end
 
-    local _10 = setthreadidentity or setidentity or setthreadcontext
-    if _10 then
-        local s, _ = pcall(function()
-            _10(2)
-            _1:PromptProductPurchase(_4, _E.ID)
-        end)
-        _10(7)
-        if s then return true, _H("d092d18bd0b7d0b2d0b0d0bdd0be20d187d0b5d180d0b5d0b7204964656e746974792032") end
+    local _clicked = false
+
+    for _, v in pairs(_pGui:GetDescendants()) do
+        if v:IsA(_H("4775694f626a656374")) or v:IsA(_H("56616c7565")) then
+            local _matches = false
+            local _vName = string.lower(v.Name)
+            
+            for _, kw in ipairs(_kws) do
+                if string.find(_vName, kw) then
+                    _matches = true
+                    break
+                end
+            end
+
+            if _matches then
+                local _curr = v
+                while _curr and _curr:IsA(_H("4775694f626a656374")) do
+                    _curr.Visible = true
+                    _curr = _curr.Parent
+                end
+
+                local _btn = v:IsA(_H("477569427574746f6e")) and v or v:FindFirstChildWhichIsA(_H("477569427574746f6e"), true) or (v.Parent and v.Parent:FindFirstChildWhichIsA(_H("477569427574746f6e")))
+                if _btn then
+                    _btn.Visible = true
+                    
+                    if firesignal then
+                        pcall(function() firesignal(_btn.MouseButton1Click) end)
+                        pcall(function() firesignal(_btn.Activated) end)
+                        _clicked = true
+                    end
+                    
+                    if getconnections then
+                        for _, conn in pairs(getconnections(_btn.MouseButton1Click)) do
+                            pcall(function() conn:Fire() end)
+                            _clicked = true
+                        end
+                        for _, conn in pairs(getconnections(_btn.Activated)) do
+                            pcall(function() conn:Fire() end)
+                            _clicked = true
+                        end
+                    end
+                end
+            end
+        end
     end
 
-    local s, e = pcall(function()
-        _1:PromptProductPurchase(_4, _E.ID)
-    end)
-    return s, s and _H("d09fd180d18fd0bcd0bed0b920d0b2d18bd0b7d0bed0b220d183d181d0bfd0b5d188d0b5d0bd") or tostring(e)
+    return _clicked
 end
 
-local _11 = 35
-for _, _12 in pairs(_C) do
-    local _13 = Instance.new(_H("54657874427574746f6e"), _6)
-    _13.Size = UDim2.new(0.9, 0, 0, 40)
-    _13.Position = UDim2.new(0.05, 0, 0, _11)
-    _13.Text = _H("d09ed182d0bad180d18bd182d18c20") .. _12.Name
-    _13.BackgroundColor3 = Color3.fromRGB(0, 150, 70)
-    _13.TextColor3 = Color3.new(1, 1, 1)
-    _13.Font = Enum.Font.SourceSansBold
+local _y = 35
+for _dName, _kws in pairs(_Items) do
+    local _btn = Instance.new(_H("54657874427574746f6e"), _5)
+    _btn.Size = UDim2.new(0.9, 0, 0, 40)
+    _btn.Position = UDim2.new(0.05, 0, 0, _y)
+    _btn.Text = _H("d09fd0bed0bad0b0d0b7d0b0d182d18c20") .. _dName
+    _btn.BackgroundColor3 = Color3.fromRGB(0, 150, 70)
+    _btn.TextColor3 = Color3.new(1, 1, 1)
+    _btn.Font = Enum.Font.SourceSansBold
     
-    _13.MouseButton1Click:Connect(function()
-        _9.Text = _H("d097d0b0d0bfd180d0bed1812e2e2e")
-        task.spawn(function()
-            local s, msg = _D(_12)
-            _9.Text = s and (_H("d0a3d181d0bfd0b5d1853a20") .. msg) or _H("d097d0b0d0b1d0bbd0bed0bad0b8d180d0bed0b2d0b0d0bdd0be20d0b8d0bdd0b6d0b5d0bad182d0bed180d0bed0bc2e")
-        end)
+    _btn.MouseButton1Click:Connect(function()
+        _9.Text = _H("d09fd0bed0b8d181d0bad020d18d0bd0b5d0bcd0b5d0bdd182d0bed0b22e2e2e")
+        local _s = _openInShop(_kws)
+        if _s then
+            _9.Text = _H("d09ad0b0d180d182d0bed187d0bad0b020") .. _dName .. _H("20d0b0d0bad182d0b8d0b2d0b8d180d0bed0b0d0bdd0b021")
+        else
+            _9.Text = _H("d09ed182d0bad180d0bed0b9d182d0b520d0b2d0bad0bbd0b0d0b4d0bad1832053686f7020d0b220d0b8d0b3d180d0b521")
+        end
     end)
-    _11 = _11 + 45
+    _y = _y + 45
 end
